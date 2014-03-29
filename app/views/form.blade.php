@@ -15,6 +15,9 @@
 			shortened URL')}}
 		</h3>
 		@endif
+		@if(Session::has('message'))
+		<h3 class="error">{{Session::get('message')}}</h3>
+		@endif
 		<h2>Uber-Shortener</h2>
 		{{Form::open(array('url'=>'/','method'=>'post'))}}
 		{{Form::text('link',Input::old('link'),
